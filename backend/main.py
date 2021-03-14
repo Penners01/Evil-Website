@@ -12,16 +12,16 @@ class theHttpHandler(http.server.SimpleHTTPRequestHandler):
 
 handler = theHttpHandler
 
-my_server = socketserver.TCPServer(("", PORT), handler)
-
-my_server.serve_forever()
+my_server = socketserver.TCPServer(("", PORT), handler) 
 
 
+def main():
+    my_server.serve_forever()
 
+if __name__ == "__main__":
+    main()
 
-
-
-
+    
 
 with socketserver.TCPServer(("", PORT), handler) as httpd:
     httpd.serve_forever()
